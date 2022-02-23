@@ -4,7 +4,7 @@
 }
 
 body {
-  background: #eaeaea;
+  background: rgba(210, 210, 210, 0.838);
   font-family: "Space Grotesk", sans-serif;
   overflow: hidden;
 }
@@ -88,12 +88,12 @@ footer {
 }
 
 .new-circle {
-  width: 10vw;
-  height: 10vh;
+  width: 60vw;
+  height: 60vh;
   border-radius: 50%;
   position: absolute;
-  top: 650px;
-  left: 50%;
+  top: 150px;
+
   transform: translate(-50%, -50%);
   background-color: yellow;
   animation: move1 5s ease infinite;
@@ -101,16 +101,13 @@ footer {
 
 @keyframes move1 {
   0% {
-    transform: translateY(10px);
-    transform: translateX(-80px);
+    transform: translateX(50px);
   }
   50% {
-    transform: translateY(150px);
-    transform: translateX(120px);
+    transform: translateX(190px);
   }
   100% {
-    transform: translateY(10px);
-    transform: translateX(-80px);
+    transform: translateX(50px);
   }
 }
 
