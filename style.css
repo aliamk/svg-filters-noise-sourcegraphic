@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #eaeaea;
+  font-family: "Space Grotesk", sans-serif;
+  overflow: hidden;
+}
+
+main {
+  height: 4000px;
+  overflow: hidden;
+}
+
+footer,
+header {
+  height: 104px;
+  background: rgba(231, 231, 231, 0.01);
+  backdrop-filter: blur(100px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+header ul li {
+  padding: 0 24px;
+}
+
+header ul li:last-of-type {
+  background-color: black;
+  color: white;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 8px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1728px;
+  padding: 0 32px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  height: 386px;
+}
+
+/* ANIMATION */
+.sphere {
+  background-color: red;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: move 5s ease infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(270px);
+  }
+  50% {
+    transform: translateY(150px);
+  }
+  100% {
+    transform: translateY(270px);
+  }
+}
+
+.new-circle {
+  width: 10vw;
+  height: 10vh;
+  border-radius: 50%;
+  position: absolute;
+  top: 650px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: yellow;
+  animation: move1 5s ease infinite;
+}
+
+@keyframes move1 {
+  0% {
+    transform: translateY(10px);
+    transform: translateX(-80px);
+  }
+  50% {
+    transform: translateY(150px);
+    transform: translateX(120px);
+  }
+  100% {
+    transform: translateY(10px);
+    transform: translateX(-80px);
+  }
+}
+
+#new-circle2 {
+  width: 10vw;
+  height: 10vh;
+  border-radius: 50%;
+  position: absolute;
+  top: 650px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  animation: move2 5s ease infinite;
+}
+
+@keyframes move2 {
+  0% {
+    transform: translateY(-200px);
+    /* transform: translateX(-80px); */
+  }
+  50% {
+    transform: translateY(200px);
+  }
+  100% {
+    transform: translateY(-80px);
+    /* transform: translateX(-80px); */
+  }
+}

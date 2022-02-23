@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skiff Prototypes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <img src="images/logo.svg" />
+        <ul>
+          <li>Product</li>
+          <li>Pricing</li>
+          <li>Blog</li>
+          <li>Blog</li>
+          <li>Sign In</li>
+          <li>Sign up for free</li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <svg
+        width="2400"
+        height="2400"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <filter id="dropShadow" x="-100%" y="-100%" width="600%" height="600%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="20" result="BLUR" />
+          <feColorMatrix
+            in="BLUR"
+            type="matrix"
+            values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 0.05 0"
+            result="ALPHA_TRANSFORMED_BLUR"
+          />
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.5"
+            numOctaves="1"
+            result="TURBULENCE"
+          />
+          <feDisplacementMap
+            in="ALPHA_TRANSFORMED_BLUR"
+            in2="TURBULENCE"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          >
+            <!-- <animate
+              attributeName="scale"
+              dur="3s"
+              values="10;400;10"
+              repeatCount="indefinite"
+            /> -->
+          </feDisplacementMap>
+          <feMerge>
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="OFFSET_BLUR" />
+          </feMerge>
+        </filter>
+
+        <!-- <circle
+          class="sphere"
+          cx="550"
+          cy="500"
+          r="100"
+          fill="red"
+          filter="url(#dropShadow)"
+        />
+
+        <circle
+          class="sphere"
+          cx="250"
+          cy="500"
+          r="100"
+          fill="red"
+          filter="url(#dropShadow)"
+        /> -->
+
+        <filter id="proper-blur" x="-100%" y="-100%" width="600%" height="600%">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.1"
+            numOctaves="0.05"
+            result="TURBULENCE"
+          >
+            <animate
+              attributeName="baseFrequency"
+              dur="5s"
+              values="0.01; 0.025;0.05;0.075;0.09;0.095;0.1"
+              repeatCount="indefinite"
+            />
+          </feTurbulence>
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="TURBULENCE"
+            xChannelSelector="R"
+            yChannelSelector="R"
+          >
+            <animate
+              attributeName="scale"
+              dur="10s"
+              values="1;100;10"
+              repeatCount="indefinite"
+            />
+          </feDisplacementMap>
+        </filter>
+      </svg>
+
+      <div class="new-circle" style="filter: url(#proper-blur)"></div>
+      <div
+        class="new-circle"
+        id="new-circle2"
+        style="filter: url(#proper-blur)"
+      ></div>
+    </main>
+
+    <script>
+      const circle = document.getElementById("circle");
+    </script>
+  </body>
+</html>
